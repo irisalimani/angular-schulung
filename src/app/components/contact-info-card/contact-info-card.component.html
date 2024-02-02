@@ -1,0 +1,37 @@
+<div class="resize-quick-view">
+  <fd-card cardType="quickView">
+    <fd-card-header>
+      <h2 fd-card-title>Kontaktinformationen</h2>
+    </fd-card-header>
+    <fd-card-content>
+      <fd-quick-view [id]="data.id">
+        <fd-quick-view-subheader>
+          <fd-avatar [image]="data.subHeader.avatar" size="s"></fd-avatar>
+          <fd-quick-view-subheader-title>
+            {{ data.subHeader.title }}
+          </fd-quick-view-subheader-title>
+        </fd-quick-view-subheader>
+        @for (group of data.groups; track group) {
+          <fd-quick-view-group>
+            @for (item of group.items; track item) {
+              <fd-quick-view-group-item>
+                <fd-quick-view-group-item-label>
+                  {{ item.label }}
+                </fd-quick-view-group-item-label>
+                <fd-quick-view-group-item-content>
+                  @if (item.label === 'Phone' ? item.label : '') {
+                    <a [href]="'tel:' + item.value" fd-link>{{ item.value }}</a>
+                  } @else if (item.label === 'Email') {
+                    <a [href]="'mailto:' + item.value" fd-link>{{ item.value }}</a>
+                  } @else {
+                    <div>{{ item.value }}</div>
+                  }
+                </fd-quick-view-group-item-content>
+              </fd-quick-view-group-item>
+            }
+          </fd-quick-view-group>
+        }
+      </fd-quick-view>
+    </fd-card-content>
+  </fd-card>
+</div>

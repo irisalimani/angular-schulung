@@ -1,0 +1,22 @@
+<div class="resize-quick-view">
+<fd-card cardType="quickView">
+  <fd-card-header>
+    <h2 fd-card-title>Versorgungsverträge</h2>
+  </fd-card-header>
+  <fd-card-content>
+  <fd-layout-grid>
+    <div fdLayoutGridRow>
+      <div [fdLayoutGridCol]="4">
+        <first-contract-card></first-contract-card>
+      </div>
+      <div [fdLayoutGridCol]="4">
+        <second-contract-card></second-contract-card>
+      </div>
+      <div [fdLayoutGridCol]="4">
+        <third-contract-card></third-contract-card>
+      </div>
+    </div>
+  </fd-layout-grid>
+  </fd-card-content>
+</fd-card>
+</div>

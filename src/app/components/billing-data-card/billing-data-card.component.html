@@ -1,0 +1,45 @@
+<div class="resize-quick-view">
+  <fd-card cardType="table">
+    <fd-card-header>
+      <h2 fd-card-title>Abrechnungsdaten</h2>
+    </fd-card-header>
+    <fd-card-content>
+      <table fd-table [noBorderX]="true" tabindex="0" [noOuterBorder]="true" [topBorder]="true">
+        <thead fd-table-header>
+        <tr fd-table-row>
+          <th fd-table-cell>Vertragskonto</th>
+          <th fd-table-cell>Abschlagsplan</th>
+          <th fd-table-cell>Fälliger Betrag ins.</th>
+          <th fd-table-cell>Offene Position ins.</th>
+          <th fd-table-cell>Mahnstufe</th>
+          <th fd-table-cell>Rechnung</th>
+        </tr>
+        </thead>
+        <tbody fd-table-body>
+        <tr fd-table-row [main]="true" [activable]="true" tabindex="0">
+          <td fd-table-cell>
+            <fd-segmented-button [(ngModel)]="value">
+              <button fd-button fdkFocusableItem glyph="action" value="second"></button>
+            </fd-segmented-button>
+            <div style="width: 70%; display: inline-block">
+              <fd-select [(value)]="selectedValue" [controlTemplate]="customSelectTemplate">
+                <li fd-list-group-header>
+                  <span fd-list-title>Vetragskonto</span>
+                </li>
+                @for (option of items; track option) {
+                  <li fd-option [value]="option">
+                    <span fd-list-title>{{ option.name }}</span>
+                  </li>
+                }
+                <ng-template #customSelectTemplate let-selected="selected">
+                  {{ selected?.value.name || 'Select an option' }}
+                </ng-template>
+              </fd-select>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </fd-card-content>
+  </fd-card>
+</div>
