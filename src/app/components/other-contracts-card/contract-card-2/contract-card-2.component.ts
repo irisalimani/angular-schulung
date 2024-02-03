@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {AvatarComponent, CardComponent, CardContentComponent, CardHeaderComponent} from "@fundamental-ngx/core";
 
 @Component({
-  selector: 'third-contract-card',
+  selector: 'contract-card-2',
   standalone: true,
     imports: [
         AvatarComponent,
@@ -10,9 +10,9 @@ import {AvatarComponent, CardComponent, CardContentComponent, CardHeaderComponen
         CardContentComponent,
         CardHeaderComponent
     ],
-  templateUrl: './third-contract-card.component.html',
-  styleUrl: './third-contract-card.component.scss'
+  templateUrl: './contract-card-2.component.html',
+  styleUrl: './contract-card-2.component.scss'
 })
-export class ThirdContractCardComponent {
+export class ContractCard2Component {
 
 }

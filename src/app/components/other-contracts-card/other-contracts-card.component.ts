@@ -14,7 +14,8 @@ import {FirstContractCardComponent} from "../supply-contracts-card/first-contrac
 import {
   SecondContractCardComponent
 } from "../supply-contracts-card/second-contract-card/second-contract-card.component";
-import {ThirdContractCardComponent} from "../supply-contracts-card/third-contract-card/third-contract-card.component";
+import {ContractCard1Component} from "./contract-card-1/contract-card-1.component";
+import {ContractCard2Component} from "./contract-card-2/contract-card-2.component";
 
 @Component({
   selector: 'other-contracts-card',
@@ -37,7 +38,8 @@ import {ThirdContractCardComponent} from "../supply-contracts-card/third-contrac
     FirstContractCardComponent,
     LayoutGridRowDirective,
     SecondContractCardComponent,
-    ThirdContractCardComponent
+    ContractCard1Component,
+    ContractCard2Component,
   ],
   templateUrl: './other-contracts-card.component.html',
   styleUrl: './other-contracts-card.component.scss'
