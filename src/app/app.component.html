@@ -1,25 +1,25 @@
 <fd-layout-grid>
-  <div fdLayoutGridRow>
-    <div [fdLayoutGridCol]="6">
-      <contact-info-card></contact-info-card>
+  <div fdLayoutGridRow style="height: 100%;">
+    <div [fdLayoutGridCol]="4">
+      <contact-info-card style="height: 100%;"></contact-info-card>
     </div>
-    <div [fdLayoutGridCol]="6">
-      <billing-data-card></billing-data-card>
+    <div [fdLayoutGridCol]="8">
+      <billing-data-card style="height: 100%;"></billing-data-card>
+    </div>
+  </div>
+
+  <div fdLayoutGridRow style="height: 100%;">
+    <div [fdLayoutGridCol]="4">
+      <supply-contracts-card style="height: 100%;"></supply-contracts-card>
+    </div>
+    <div [fdLayoutGridCol]="8" style="display: flex; flex-direction: column; height: 100%;">
+      <history-card style="flex: 1;"></history-card>
     </div>
   </div>
 
   <div fdLayoutGridRow>
-    <div [fdLayoutGridCol]="6">
-      <supply-contracts-card></supply-contracts-card>
-    </div>
+  <div [fdLayoutGridCol]="4">
+    <other-contracts-card></other-contracts-card>
   </div>
-
-  <div fdLayoutGridRow>
-      <div [fdLayoutGridCol]="6">
-        <other-contracts-card></other-contracts-card>
-      </div>
-    <div [fdLayoutGridCol]="6">
-       <history-card></history-card>
-    </div>
   </div>
 </fd-layout-grid>

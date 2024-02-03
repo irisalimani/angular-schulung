@@ -1,23 +1,24 @@
-<fd-card fdCompact cardType="list">
-  <fd-card-header>
-    <h2 fd-card-title>Historie</h2>
-
-
-  </fd-card-header>
-  <fd-card-content>
-    <ul fd-list [noBorder]="true">
-      <li fd-list-item>
-        <span fd-list-title> item 1 </span>
-      </li>
-      <li fd-list-item>
-        <span fd-list-title> item 2 </span>
-      </li>
-      <li fd-list-item>
-        <span fd-list-title> item 3 </span>
-      </li>
-      <li fd-list-item>
-        <span fd-list-title> item 4 </span>
-      </li>
-    </ul>
-  </fd-card-content>
-</fd-card>
+<div class="resize-quick-view">
+  <fd-card style="height: auto; overflow: auto;">
+    <fd-card-header>
+      <h2 fd-card-title>Historie</h2>
+    </fd-card-header>
+    <fd-card-content>
+      <div fd-scrollbar>
+        <fd-timeline [dataSource]="data" [axis]="axis" [layout]="layout">
+          <fd-timeline-node *fdTimelineNodeDef="let node" [glyph]="node.glyph">
+            <fd-timeline-node-header>
+              <fd-timeline-node-header-info>
+                <span fdTimelineNodeHeaderInfoTitle>{{ node.service.name }}</span>
+                <span fdTimelineNodeHeaderInfoText>{{ node.title }}</span>
+                <div fdTimelineHeaderInfoSubTitle>{{ node.date | date: 'short' }}</div>
+                <span fdTimelineNodeHeaderInfoText>{{ node.status }}</span>
+              </fd-timeline-node-header-info>
+            </fd-timeline-node-header>
+            <fd-timeline-node-body [content]="node.post"></fd-timeline-node-body>
+          </fd-timeline-node>
+        </fd-timeline>
+      </div>
+    </fd-card-content>
+  </fd-card>
+</div>
